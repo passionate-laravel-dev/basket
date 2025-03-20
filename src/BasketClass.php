@@ -18,7 +18,7 @@ class BasketClass {
         $this->deliveryCharges = [
             50 => 4.95,
             90 => 2.95,
-            PHP_FLOAT_MAX => 0.00
+            PHP_INT_MAX => 0.00
         ];
 
         foreach ($items as $productCode) {
@@ -58,13 +58,11 @@ class BasketClass {
                 return $fee;
             }
         }
-        return $this->deliveryCharges[PHP_FLOAT_MAX];
+        return $this->deliveryCharges[PHP_INT_MAX];
     }
 
     public static function test() {
         $obj = new static(['B01', 'G01']);
-        echo $obj->total() . PHP_EOL;
-
-        return new static();
+        return $obj->total();
     }
 }
