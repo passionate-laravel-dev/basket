@@ -1,45 +1,53 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "passionator/basket",
+    "description": "taha haddane test for architech-labs-code-test",
     "keywords": [
-        ":vendor_name",
-        ":package_slug"
+        "passionator",
+        "basket"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/passionator/basket",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Taha Haddane",
+            "email": "taha.engineer26@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.4"
+        "php": "^8.2"
     },
     "require-dev": {
-        :require_dev_testing,
-        :require_dev_codestyle,
-        "spatie/ray": "^1.28"
+        "laravel/pint": "^1.14",
+        "nunomaduro/collision": "^8.1.1||^7.10.0",
+        "larastan/larastan": "^2.9||^3.0",
+        "orchestra/testbench": "^10.0.0||^9.0.0||^8.22.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-arch": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0",
+        "phpstan/extension-installer": "^1.3||^2.0",
+        "phpstan/phpstan-deprecation-rules": "^1.1||^2.0",
+        "phpstan/phpstan-phpunit": "^1.3||^2.0"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src"
+            "Passionator\\Basket\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Passionator\\Basket\\Tests\\": "tests"
         }
     },
     "scripts": {
-        :scripts_testing,
-        :scripts_codestyle
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
     },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            :plugins_testing,
+            "pestphp/pest-plugin": true,
             "phpstan/extension-installer": true
         }
     },
